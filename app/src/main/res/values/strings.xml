@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SwitchLibrary</string>
+
+    <string name="intro_hello_not_login">환영합니다. 스위치 독서실 입니다.\n자리를 예매하거나 취소하려면 로그인 해 주세요.</string>
 </resources>
