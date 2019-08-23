@@ -2,4 +2,11 @@
     <string name="app_name">SwitchLibrary</string>
 
     <string name="intro_hello_not_login">환영합니다. 스위치 독서실 입니다.\n자리를 예매하거나 취소하려면 로그인 해 주세요.</string>
+
+    <string name="login_title">처리 중...</string>
+    <string name="login_title_message">로그인을 처리하고 있습니다...</string>
+    <string name="login_error_title">로그인 실패</string>
+    <string name="login_error_title_message">로그인에 실패 했습니다. 원인은 아래와 같습니다. =></string>
+
+    <string name="kakao_app_key">c306b116d60637d42d635af0f430e194</string>
 </resources>
