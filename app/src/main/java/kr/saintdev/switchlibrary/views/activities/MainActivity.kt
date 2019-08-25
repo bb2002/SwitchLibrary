@@ -29,9 +29,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        this.callback = SessionCallback(this)
-        Session.getCurrentSession().addCallback(this.callback)
-        Session.getCurrentSession().checkAndImplicitOpen()
+        val authManager = SwitchLibAuthManager.getInstance()
+
+        if(SwitchLibAuthManager.getCurrentToken() == null) {
+            UserManagement.getInstance().me(object : MeV2ResponseCallback() {
+                override fun onSuccess(result: MeV2Response?) {
+                    // 로그인이 이미 된 사용자.
+                }
+
+                override fun onSessionClosed(errorResult: ErrorResult?) {
+                    // 로그인이 필요한 사용자.
+                }
+            })
+
+            // Need to login
+
+            this.callback = SessionCallback(this)
+            Session.getCurrentSession().addCallback(this.callback)
+            Session.getCurrentSession().checkAndImplicitOpen()
+        }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -75,9 +91,17 @@ class MainActivity : AppCompatActivity() {
                             notifiDialog.dismiss()
                             if(response.isSuccessful) {
                                 // 요청에 성공 했습니다.
-                                val authContainer = response.body()
-                                Log.e("Switch", "OKOKOKOKOKO!!!!!!")
-                                Log.e("Switch", "status : ${authContainer?.status}")
+                                val newToken = response.body()?.body?.get("token")?.asString
+                                if(newToken == null) {
+                                    // Token recv failed.
+                                    SwitchLibDialog.openMessageDialog(R.string.login_tokenerror_title, R.string.login_tokenerror_title_message, this@MainActivity)
+                                } else {
+                                    // Token recv success.
+                                    val authManager = SwitchLibAuthManager.getInstance()
+                                    authManager.setRefreshToken(newToken)
+
+                                    // Login successed.
+                                }
                             } else {
                                 // 요청에 오류가 발생 했습니다.
                                 onFailure(call, null)

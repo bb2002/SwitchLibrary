@@ -9,6 +9,8 @@
     <string name="login_error_title_message">로그인에 실패 했습니다. 원인은 아래와 같습니다. =></string>
     <string name="login_neterror_title">네트워크 오류</string>
     <string name="login_neterror_title_message">서버 인증 요청에 실패했습니다.</string>
+    <string name="login_tokenerror_title">인증 오류</string>
+    <string name="login_tokenerror_title_message">token 이 null 입니다.</string>
 
     <string name="kakao_app_key">c306b116d60637d42d635af0f430e194</string>
 </resources>

@@ -45,7 +45,7 @@ class SwitchLibAuthManager private constructor() {
      * @Date 08.24 2019
      * 토큰 값을 저장합니다.
      */
-    fun refreshToken(newToken: String) {
+    fun setRefreshToken(newToken: String) {
         serverToken = newToken
     }
 }
