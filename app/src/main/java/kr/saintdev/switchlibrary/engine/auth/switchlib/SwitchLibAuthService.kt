@@ -6,6 +6,6 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface SwitchLibAuthService {
-    @GET("auth/login")
+    @GET("auth/kakaologin")
     fun requestAuthForKakao(@Body data: String) : Call<SwitchLibAuthContainer>
 }

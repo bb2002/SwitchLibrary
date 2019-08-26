@@ -12,11 +12,13 @@ import com.kakao.usermgmt.callback.MeV2ResponseCallback
 import com.kakao.usermgmt.request.MeV2Request
 import com.kakao.usermgmt.response.MeV2Response
 import com.kakao.util.exception.KakaoException
+import kotlinx.android.synthetic.main.activity_main.*
 import kr.saintdev.switchlibrary.R
 import kr.saintdev.switchlibrary.engine.auth.kakao.SessionCallback
 import kr.saintdev.switchlibrary.engine.auth.switchlib.SwitchLibAuthContainer
 import kr.saintdev.switchlibrary.engine.auth.switchlib.SwitchLibAuthManager
 import kr.saintdev.switchlibrary.engine.lib.SwitchLibDialog
+import kr.saintdev.switchlibrary.views.fragments.MenuFragment
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -28,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+/*
         val authManager = SwitchLibAuthManager.getInstance()
 
         if(SwitchLibAuthManager.getCurrentToken() == null) {
@@ -48,6 +50,12 @@ class MainActivity : AppCompatActivity() {
             Session.getCurrentSession().addCallback(this.callback)
             Session.getCurrentSession().checkAndImplicitOpen()
         }
+        */
+
+        // 로그인 됬다고 가정.
+        val fragmnTrans = supportFragmentManager.beginTransaction()
+        fragmnTrans.replace(R.id.main_content, MenuFragment())
+        fragmnTrans.commit()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

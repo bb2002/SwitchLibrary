@@ -32,11 +32,8 @@ class SwitchLibAuthManager private constructor() {
     fun tryAuth(kakaoAccount: MeV2Response, callback: Callback<SwitchLibAuthContainer>) {
         val authService = RetrofitObject.retrofit.create(SwitchLibAuthService::class.java)
         val data = JsonObject()
-        data.addProperty("uniqid", kakaoAccount.id)
+        data.addProperty("id", kakaoAccount.id)
         data.addProperty("nickname", kakaoAccount.nickname)
-        data.addProperty("profile_img", kakaoAccount.profileImagePath)
-        data.addProperty("thumb_img", kakaoAccount.thumbnailImagePath)
-        data.addProperty("email", kakaoAccount.kakaoAccount?.email)
         val call = authService.requestAuthForKakao(data.toString())
         call.enqueue(callback)
     }
