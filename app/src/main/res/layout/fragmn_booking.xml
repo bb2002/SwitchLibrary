@@ -5,6 +5,26 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         xmlns:app="http://schemas.android.com/apk/res-auto">
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/booking_start"
+            android:background="@color/ui_color_blue"
+            android:text="@string/booking_start"
+            android:drawableStart="@drawable/ic_booking_start"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp"/>
 
+    <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/my_booking"
+            android:background="@color/ui_color_white"
+            android:text="@string/my_booking"
+            android:drawableStart="@drawable/ic_booking_list"
+            android:textColor="#000000"
+            android:paddingStart="32dp"
+            android:paddingEnd="32dp" />
 
 </LinearLayout>
