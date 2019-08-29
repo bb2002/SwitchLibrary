@@ -15,5 +15,8 @@
     <string name="booking_start">새 자리 예약</string>
     <string name="my_booking">내 예약 확인</string>
 
+    <string name="booking_button_text">예매 하기</string>
+    <string name="booking_activity_title">새 자리 예매</string>
+
     <string name="kakao_app_key">c306b116d60637d42d635af0f430e194</string>
 </resources>

@@ -1,5 +1,6 @@
 package kr.saintdev.switchlibrary.views.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import kr.saintdev.switchlibrary.R
+import kr.saintdev.switchlibrary.views.activities.BookingStartActivity
+import kr.saintdev.switchlibrary.views.activities.MainActivity
 
 class MenuFragment : Fragment() {
     private lateinit var mBookingStartButton: Button
@@ -28,7 +31,8 @@ class MenuFragment : Fragment() {
 
     inner class BookingStartClickListener : View.OnClickListener {
         override fun onClick(v: View?) {
-            
+            val intent = Intent(context, BookingStartActivity::class.java)
+            startActivity(intent)
         }
     }
 

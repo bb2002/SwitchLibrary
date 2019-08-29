@@ -68,7 +68,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
-        Session.getCurrentSession().removeCallback(this.callback)
+//        Session.getCurrentSession().removeCallback(this.callback)
     }
 
     fun onLoginSuccessed() {

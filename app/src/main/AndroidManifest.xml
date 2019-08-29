@@ -14,7 +14,10 @@
             android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".views.activities.MyBookingActivity">
         </activity>
-        <activity android:name=".views.activities.BookingStartActivity">
+        <activity
+                android:name=".views.activities.BookingStartActivity"
+                android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+                android:label="@string/booking_activity_title">
         </activity>
 
         <meta-data
