@@ -1,11 +1,9 @@
 package kr.saintdev.switchlibrary.engine.auth.switchlib
 
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface SwitchLibAuthService {
-    @GET("auth/kakaologin")
-    fun requestAuthForKakao(@Body data: String) : Call<SwitchLibAuthContainer>
+    @POST("auth/kakaologin")
+    fun requestAuthForKakao(@Query("id") userId: String, @Query("nickname") nickname: String) : Call<SwitchLibAuthContainer>
 }

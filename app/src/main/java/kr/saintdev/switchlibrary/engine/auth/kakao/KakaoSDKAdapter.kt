@@ -13,7 +13,7 @@ class KakaoSDKAdapter : KakaoAdapter() {
         return object : ISessionConfig {
             override fun isSaveFormData() = true
 
-            override fun getAuthTypes() = arrayOf(AuthType.KAKAO_LOGIN_ALL)
+            override fun getAuthTypes() = arrayOf(AuthType.KAKAO_LOGIN_ALL, AuthType.KAKAO_ACCOUNT)
 
             override fun isSecureMode() = false
 
